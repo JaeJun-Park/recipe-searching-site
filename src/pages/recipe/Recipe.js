@@ -1,22 +1,24 @@
+import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useFetch } from '../../hooks/useFetch'
 import './Recipe.css'
 
-export default function Recipe() {
+function Recipe(props) {
   const { id } = useParams()
+
   const { data: recipe, isPending, error } = useFetch(`http://localhost:3000/recipes/${id}`)
 
   return (
     <div className="recipe">
-      {error && <p>{error}</p>}
-      {isPending && <p>Loading...</p>}
+      {isPending && <div>Loading...</div>}
+      {error && <div>{error}</div>}
       {recipe && (
         <>
           <h2 className="page-title">{recipe.title}</h2>
           <p>Takes {recipe.cookingTime} to cook</p>
           <ul>
-            {recipe.ingredients.map((ingredient) => (
-              <li key={ingredient}>{ingredient}</li>
+            {recipe.ingredients.map((ing) => (
+              <li key={ing}>{ing}</li>
             ))}
           </ul>
           <p className="method">{recipe.method}</p>
@@ -25,3 +27,5 @@ export default function Recipe() {
     </div>
   )
 }
+
+export default Recipe

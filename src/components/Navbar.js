@@ -6,10 +6,10 @@ export default function Navbar() {
   return (
     <div className="navbar">
       <nav>
-        <Link to="/" className="brand">
+        <Link className="brand" to="/">
           <h1>Home</h1>
         </Link>
-        <Link to="/create">Create Recipe</Link>
+        <Link to="/create">{'Create Recipe'}</Link>
       </nav>
     </div>
   )
