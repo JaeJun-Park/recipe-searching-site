@@ -2,8 +2,6 @@ import './Navbar.css'
 import { Link } from 'react-router-dom'
 import React, { useContext } from 'react'
 import Searchbar from './Searchbar'
-// import { useTheme } from '../hooks/useTheme'
-import { ThemeContext } from '../context/ThemeContext'
 import { useTheme } from '../hooks/useTheme'
 
 

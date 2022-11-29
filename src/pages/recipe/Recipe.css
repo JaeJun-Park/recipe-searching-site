@@ -7,6 +7,14 @@
   box-sizing: border-box;
 }
 
+.recipe.dark {
+  background-color: #555;
+}
+
+.recipe.dark * {
+  color: #e4e4e4;
+}
+
 .recipe ul {
   display: flex;
   padding: 0;
